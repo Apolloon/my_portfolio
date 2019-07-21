@@ -83,7 +83,7 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.5; }
   body#bg-img {
-    background: url("../images/background-filter.png");
+    background: url("../images/home-background.jpg");
     background-attachment: fixed;
     background-size: cover; }
   body#work-body {
