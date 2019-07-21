@@ -1,0 +1,22 @@
+{
+  "name": "responsive-portfolio",
+  "version": "1.0.0",
+  "description": "Responsive Web by Apolloon",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass -w scss/ -o dist/css/ --recursive"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Apolloon/my_portfolio.git"
+  },
+  "author": "Janiel Apollo Bodiongan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Apolloon/my_portfolio.git/issues"
+  },
+  "homepage": "https://github.com/Apolloon/my_portfolio.git#readme",
+  "dependencies": {
+    "node-sass": "^4.12.0"
+  }
+}

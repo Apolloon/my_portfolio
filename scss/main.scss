@@ -1,0 +1,278 @@
+@import "config";
+@import "menu";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  @include background;
+  background: $primary-color;
+  color: white;
+  height: 100%;
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5;
+}
+
+//Headings
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 400;
+
+  &.lg-heading {
+    padding-top: 5rem;
+    padding-left: 5rem;
+    font-size: 3rem;
+  }
+
+  &.sm-heading {
+    margin-bottom: 2rem;
+
+    padding: 0.2rem 0.5rem;
+    padding-left: 5rem;
+    font-family: "Times New Roman", Times, serif;
+  }
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+header {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+}
+
+.text-secondary {
+  color: $secondary-color;
+}
+
+main {
+  padding: 4rem;
+  //height: 100%;
+  min-height: calc(100vh - 60px);
+
+  &#home {
+    overflow: hidden;
+
+    h1 {
+      margin-top: 20vh;
+    }
+  }
+}
+
+//About
+#about {
+  overflow: hidden;
+
+  .lg-heading,
+  .sm-heading {
+    padding-left: 60px;
+  }
+}
+
+.about-info {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-areas:
+    "bioimage bio bio"
+    "social job1 job2";
+  grid-template-columns: repeat(3, 1fr);
+
+  .bio-image {
+    grid-area: bioimage;
+    margin: auto;
+
+    .profile-image {
+      border-radius: 50%;
+      border: $secondary-color 2px solid;
+      width: 236px;
+      height: auto;
+    }
+
+    .icons {
+      margin-top: 1rem;
+      padding-left: 2rem;
+
+      a {
+        padding: 0.4rem;
+
+        &:hover {
+          color: $secondary-color;
+          @include easeOut();
+        }
+      }
+    }
+  }
+
+  .bio {
+    grid-area: bio;
+    //background: lighten($bg-color, 5);
+    padding: 0.5rem;
+
+    .tech {
+      position: relative;
+      //Skills
+      display: grid;
+      grid-gap: 5px;
+      grid-template-areas: "skill1 skill2 skill3";
+      grid-template-columns: repeat(3, 1fr);
+
+      span {
+        background-color: darken($bg-color, 2);
+        border-radius: 8px;
+        text-align: center;
+      }
+
+      .note {
+        margin: 0;
+      }
+    }
+
+    .skill-1 {
+      grid-area: skill1;
+    }
+
+    .skill-2 {
+      grid-area: skill2;
+    }
+
+    .skill-3 {
+      grid-area: skill3;
+    }
+  }
+
+  .icons {
+    grid-area: social;
+  }
+
+  .job-1 {
+    grid-area: job1;
+  }
+
+  .job-2 {
+    grid-area: job2;
+  }
+
+  .job {
+    background: lighten($bg-color, 5);
+    padding: 0.5rem;
+    border-bottom: $secondary-color 5px solid;
+
+    h3,
+    h4 {
+      margin: 0 auto;
+    }
+
+    h5 {
+      margin-bottom: 0;
+    }
+
+    p {
+      margin-top: 2px;
+    }
+  }
+}
+
+
+//Projects
+#work {
+
+  .lg-heading,
+  .sm-heading {
+    font-family: 'Ubuntu', sans-serif;
+    text-align: center;
+    padding: 0;
+
+  }
+
+  .sm-heading {
+    margin-bottom: 1.5rem;
+  }
+
+
+
+  .projects {
+    display: grid;
+    grid-gap: 0.7rem;
+    grid-template-columns: repeat(3, 1fr);
+
+    img,
+    iframe {
+      width: 100%;
+      border: 3px #fff solid;
+
+      &:hover {
+        opacity: 0.85;
+        border-color: $secondary-color;
+        @include easeOut;
+      }
+
+
+    }
+
+    .content-desc {
+      background: lighten($bg-color, 5);
+      color: #fff;
+      margin: 0;
+      padding-left: 10px;
+      border-bottom: $secondary-color 3px solid;
+
+      .project-color {
+        padding-top: 12px;
+        margin: 0;
+        color: $secondary-color;
+      }
+
+      p {
+        margin: 0;
+        margin-bottom: 12px;
+        padding-right: 0;
+      }
+
+    }
+  }
+}
+
+
+
+//Button Styles
+.btn {
+  display: block;
+  padding: 0.5rem 1rem;
+  border: 0;
+  border-radius: 8px;
+  margin-bottom: 0.3rem;
+
+  &:hover {
+    background: $secondary-color;
+    color: set-text-color($secondary-color)
+  }
+}
+
+.btn-dark {
+  @extend .btn;
+  background: darken($primary-color, 50);
+  color: #fff;
+}
+
+.btn-light {
+  @extend .btn;
+  background: lighten($primary-color, 50);
+  color: #333;
+}
+
+#main-footer {
+  text-align: center;
+  padding: 1rem;
+  background: darken($bg-color, 10);
+  color: set-text-color($bg-color);
+  height: 60px;
+}
+
+@import "mobile";
