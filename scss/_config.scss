@@ -11,17 +11,21 @@ $background-opacity: 0.9;
 }
 
 @mixin background {
-    &#bg-img {
-        background: $home-image;
-        background-attachment: fixed;
-        background-size: cover;
+    @if $show-home-image {
+        &#bg-img {
+            background: $home-image;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        &#work-body {
+            background: $work-image;
+            background-attachment: fixed;
+            background-size: cover;
+        }
     }
 
-    &#work-body {
-        background: $work-image;
-        background-attachment: fixed;
-        background-size: cover;
-    }
+
 }
 
 //Media Queries
