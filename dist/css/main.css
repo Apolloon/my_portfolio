@@ -87,7 +87,7 @@ body {
     background-attachment: fixed;
     background-size: cover; }
   body#work-body {
-    background: url("../images/work-background.jpg");
+    background: url("../images/home-background.jpg");
     background-attachment: fixed;
     background-size: cover; }
 
@@ -313,6 +313,9 @@ main {
     padding-left: 0; }
     main#home h2 span {
       display: inline-block; }
+  main#about .lg-heading,
+  main#about .sm-heading {
+    padding-left: 0; }
   main#about .tech {
     grid-template-areas: 'skill1' 'skill2' 'skill3';
     grid-template-columns: 1fr; }

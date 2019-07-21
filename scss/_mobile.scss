@@ -101,6 +101,12 @@
     }
 
     main#about {
+
+        .lg-heading,
+        .sm-heading {
+            padding-left: 0;
+        }
+
         .tech {
 
             grid-template-areas:

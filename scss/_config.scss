@@ -3,7 +3,6 @@ $secondary-color: rgb(236, 85, 39);
 $bg-color: hsl(185, 43%, 21%);
 $show-home-image: true;
 $home-image: url("../images/home-background.jpg");
-$work-image: url("../images/work-background.jpg");
 $background-opacity: 0.9;
 
 @mixin easeOut {
@@ -19,7 +18,7 @@ $background-opacity: 0.9;
         }
 
         &#work-body {
-            background: $work-image;
+            background: $home-image;
             background-attachment: fixed;
             background-size: cover;
         }
