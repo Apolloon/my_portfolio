@@ -74,6 +74,7 @@ main {
   .sm-heading {
     padding-left: 60px;
   }
+
 }
 
 .about-info {
@@ -115,12 +116,23 @@ main {
     //background: lighten($bg-color, 5);
     padding: 0.5rem;
 
+    h4 {
+      margin-bottom: 0;
+    }
+
+    p {
+      margin-top: 0;
+    }
+
     .tech {
       position: relative;
       //Skills
       display: grid;
       grid-gap: 5px;
-      grid-template-areas: "skill1 skill2 skill3";
+      grid-template-areas:
+        "skill1 skill2 skill3"
+        "skill4 skill5 skill6"
+        "skill7 skill8 space";
       grid-template-columns: repeat(3, 1fr);
 
       span {
@@ -144,6 +156,26 @@ main {
 
     .skill-3 {
       grid-area: skill3;
+    }
+
+    .skill-4 {
+      grid-area: skill4;
+    }
+
+    .skill-5 {
+      grid-area: skill5;
+    }
+
+    .skill-6 {
+      grid-area: skill6;
+    }
+
+    .skill-7 {
+      grid-area: skill7;
+    }
+
+    .skill-8 {
+      grid-area: skill8;
     }
   }
 
@@ -202,8 +234,8 @@ main {
     grid-gap: 0.7rem;
     grid-template-columns: repeat(3, 1fr);
 
-    img,
-    iframe {
+
+    img {
       width: 100%;
       border: 3px #fff solid;
 
@@ -212,7 +244,6 @@ main {
         border-color: $secondary-color;
         @include easeOut;
       }
-
 
     }
 
