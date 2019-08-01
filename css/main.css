@@ -210,40 +210,58 @@ main {
     .about-info .job p {
       margin-top: 2px; }
 
-#work .lg-heading,
-#work .sm-heading {
-  font-family: 'Ubuntu', sans-serif;
-  text-align: center;
-  padding: 0; }
-
-#work .sm-heading {
-  margin-bottom: 1.5rem; }
-
-#work .projects {
-  display: grid;
-  grid-gap: 0.7rem;
-  grid-template-columns: repeat(3, 1fr); }
-  #work .projects img {
-    width: 100%;
-    border: 3px #fff solid; }
-    #work .projects img:hover {
-      opacity: 0.85;
-      border-color: #ec3427;
-      transition: all 0.8s ease-out; }
-  #work .projects .content-desc {
-    background: #265a5f;
-    color: #fff;
-    margin: 0;
-    padding-left: 10px;
-    border-bottom: #ec3427 3px solid; }
-    #work .projects .content-desc .project-color {
-      padding-top: 12px;
+#work {
+  /*End of Heading
+    Start of Projects
+  */ }
+  #work .lg-heading,
+  #work .sm-heading {
+    font-family: "Ubuntu", sans-serif;
+    text-align: center;
+    padding: 0; }
+  #work .sm-heading {
+    margin-bottom: 1.5rem; }
+  #work .projects {
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: repeat(3, 1fr); }
+    #work .projects .item {
+      position: relative;
       margin: 0;
-      color: #ec3427; }
-    #work .projects .content-desc p {
-      margin: 0;
-      margin-bottom: 12px;
-      padding-right: 0; }
+      padding: 0; }
+      #work .projects .item img {
+        width: 100%;
+        height: 100%;
+        max-height: 250px;
+        border: 3px #fff solid; }
+        #work .projects .item img:hover {
+          border-color: #ec3427;
+          transition: all 0.8s ease-out; }
+      #work .projects .item .descriptions {
+        height: 73%;
+        width: 100%;
+        background-color: #265a5f;
+        position: absolute;
+        text-align: left;
+        padding: 10px;
+        border-bottom: 3px #ec3427 solid;
+        overflow: hidden; }
+        #work .projects .item .descriptions h4,
+        #work .projects .item .descriptions h5 {
+          color: #e52214;
+          margin: 0; }
+        #work .projects .item .descriptions h5 {
+          color: white; }
+        #work .projects .item .descriptions span,
+        #work .projects .item .descriptions h4 {
+          font-weight: bold; }
+        #work .projects .item .descriptions p {
+          font-size: 11px;
+          line-height: 1em;
+          display: block;
+          font-family: Verdana, Geneva, Tahoma, sans-serif;
+          color: white;
+          list-style: none; }
 
 .btn, .btn-dark, .btn-light {
   display: block;
@@ -272,13 +290,25 @@ main {
 
 @media screen and (max-width: 1171px) {
   .projects {
-    grid-template-columns: repeat(4, 1fr); } }
+    grid-template-columns: repeat(4, 1fr); }
+    .projects .descriptions {
+      overflow: scroll; } }
 
-@media screen and (min-width: 770px) and (max-width: 1170px) {
+@media screen and (min-width: 770px) and (max-width: 1000px) {
   .projects {
-    grid-template-columns: repeat(2, 1fr); } }
+    grid-template-columns: repeat(2, 1fr); }
+    .projects p {
+      font-size: 4px; }
+    .projects .descriptions {
+      max-height: 160px;
+      overflow: hidden;
+      padding: 4px; }
+      .projects .descriptions p {
+        font-size: 4px; } }
 
 @media screen and (max-width: 769px) {
+  main {
+    padding: 1.5rem; }
   main#home {
     align-items: center;
     text-align: center; }
@@ -302,18 +332,29 @@ main {
       vertical-align: middle;
       font-size: 12px; }
     main#about .about-info {
-      grid-template-areas: 'bioimage' 'social' 'bio' 'job1' 'job2';
+      grid-template-areas: "bioimage" "social" "bio" "job1" "job2";
       grid-template-columns: 1fr; }
       main#about .about-info .tech {
-        grid-template-areas: 'skill1' 'skill2' 'skill3' 'skill4' 'skill5' 'skill6' 'skill7' 'skill8';
+        grid-template-areas: "skill1" "skill2" "skill3" "skill4" "skill5" "skill6" "skill7" "skill8";
         grid-template-columns: 1fr; }
       main#about .about-info .icons {
         padding-left: 0;
         margin-left: 0; }
-  .projects {
-    grid-template-columns: repeat(2, 1fr); } }
+  main#work .projects {
+    grid-gap: 1rem;
+    grid-template-columns: 1fr; }
+    main#work .projects .descriptions {
+      max-height: 250px;
+      overflow: scroll;
+      padding-bottom: 20px; }
+    main#work .projects p {
+      margin-top: 4px;
+      margin-bottom: 4px;
+      padding: 0; }
+  main#work .btn-light {
+    margin-top: 18px; } }
 
-@media screen and (max-width: 500px) {
+@media screen and (min-width: 400px) and (max-width: 500px) {
   main#home h1 {
     margin-top: 2vh;
     font-size: 2.5rem;
@@ -329,7 +370,7 @@ main {
   main#about .sm-heading {
     padding-left: 0; }
   main#about .tech {
-    grid-template-areas: 'skill1' 'skill2' 'skill3' 'skill4' 'skill5' 'skill6' 'skill7' 'skill8';
+    grid-template-areas: "skill1" "skill2" "skill3" "skill4" "skill5" "skill6" "skill7" "skill8";
     grid-template-columns: 1fr; }
     main#about .tech span {
       font-size: 14px; }
@@ -337,15 +378,33 @@ main {
     padding-left: 0;
     margin-left: 0; }
   main#work .projects {
-    grid-template-columns: 1fr; } }
+    grid-template-columns: 1fr; }
+    main#work .projects .item .descriptions {
+      font-size: 12px;
+      height: 100%;
+      max-height: 250px;
+      overflow: scroll; } }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 399px) {
   main#about {
     padding-left: 50px; }
     main#about .tech {
-      grid-template-areas: 'skill1' 'skill2' 'skill3' 'skill4' 'skill5' 'skill6' 'skill7' 'skill8';
+      grid-template-areas: "skill1" "skill2" "skill3" "skill4" "skill5" "skill6" "skill7" "skill8";
       grid-template-columns: 1fr; }
     main#about .tech span {
       margin-left: 20%;
       vertical-align: middle;
-      font-size: 14px; } }
+      font-size: 14px; }
+  main#work .projects {
+    grid-template-columns: 1fr; }
+    main#work .projects .descriptions {
+      max-height: 256px;
+      width: 100%;
+      overflow: scroll; } }
+
+@media screen and (max-width: 320px) {
+  main#work .projects {
+    grid-template-columns: 1fr; }
+    main#work .projects .descriptions {
+      max-height: 220px;
+      width: 100%; } }
