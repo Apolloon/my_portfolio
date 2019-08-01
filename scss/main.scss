@@ -224,92 +224,90 @@ main {
     margin-bottom: 1.5rem;
   }
 
+  /*End of Heading
+    Start of Projects
+  */
   .projects {
     display: grid;
     grid-gap: 2rem;
     grid-template-columns: repeat(3, 1fr);
 
-    img {
-      width: 100%;
-      height: 100%;
-      border: 3px #fff solid;
 
-      &:hover {
-        //opacity: 0.85;
-        border-color: $secondary-color;
-        @include easeOut;
-      }
-    }
 
-    .content-desc {
-      background: lighten($bg-color, 5);
-      color: #fff;
+
+
+    .item {
+      position: relative;
       margin: 0;
-      padding-left: 10px;
-      border-bottom: $secondary-color 3px solid;
+      padding: 0;
 
-      .project-color {
-        padding-top: 12px;
-        margin: 0;
-        color: $secondary-color;
+      img {
+        width: 100%;
+        height: 100%;
+        max-height: 250px;
+        border: 3px #fff solid;
+
+        &:hover {
+          //opacity: 0.85;
+          border-color: $secondary-color;
+          @include easeOut;
+        }
       }
 
-      p {
-        margin: 0;
-        margin-bottom: 12px;
-        padding-right: 0;
+      .descriptions {
+        height: 73%;
+        width: 100%;
+        background-color: lighten($bg-color, 5);
+        position: absolute;
+        //opacity: 0.8;
+        text-align: left;
+        padding: 10px;
+        border-bottom: 3px $secondary-color solid;
+        overflow: hidden;
+
+        h4,
+        h5 {
+          color: darken($secondary-color, 5);
+          margin: 0;
+        }
+
+        h5 {
+          color: white;
+        }
+
+        span,
+        h4 {
+          font-weight: bold;
+        }
+
+        p {
+          font-size: 11px;
+          line-height: 1em;
+          display: block;
+          font-family: Verdana, Geneva, Tahoma, sans-serif;
+          color: white;
+          //opacity: 1;
+          list-style: none;
+          //flex-wrap: wrap;
+
+        }
+
       }
+
+
     }
+
   }
 }
 
 //Button Styles
-.item {
-  position: relative;
-  margin: 0;
-  padding: 0;
-
-  .descriptions {
-    height: 87%;
-    width: 100%;
-    background-color: lighten($bg-color, 5);
-    position: absolute;
-    //opacity: 0.8;
-    text-align: left;
-    padding: 12px;
-    border-bottom: 3px $secondary-color solid;
-
-    h4 {
-      color: darken($secondary-color, 5);
-    }
-
-    span,
-    h4 {
-      font-weight: bold;
-    }
-
-    p {
-      font-size: 12px;
-      line-height: 1.5em;
-      display: block;
-      font-family: Verdana, Geneva, Tahoma, sans-serif;
-      color: white;
-      //opacity: 1;
-      list-style: none;
-      flex-wrap: wrap;
-    }
-
-  }
-
-
-}
 
 .btn {
-  display: inline-block;
+  display: block;
   padding: 0.5rem 1rem;
   border: 0;
   border-radius: 8px;
-  //margin-bottom: 0.3rem;
+  margin-bottom: 0.3rem;
 
   &:hover {
     background: $secondary-color;
@@ -318,14 +316,14 @@ main {
 }
 
 .btn-dark {
-  width: 49%;
+  //width: 49%;
   @extend .btn;
   background: darken($primary-color, 50);
   color: #fff;
 }
 
 .btn-light {
-  width: 49%;
+  //width: 49%;
   @extend .btn;
   background: lighten($primary-color, 50);
   color: #333;

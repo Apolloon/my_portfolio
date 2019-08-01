@@ -2,6 +2,10 @@
 @include mediaXl {
     .projects {
         grid-template-columns: repeat(4, 1fr);
+
+        .descriptions {
+            overflow: scroll;
+        }
     }
 }
 
@@ -9,11 +13,30 @@
 @include mediaLg {
     .projects {
         grid-template-columns: repeat(2, 1fr);
+
+        p {
+            font-size: 4px;
+        }
+
+        .descriptions {
+            //height: 100%;
+            max-height: 160px;
+            overflow: hidden;
+            padding: 4px;
+
+            p {
+                font-size: 4px;
+            }
+        }
     }
 }
 
 //Tablets & Small Laptops
 @include mediaMd {
+    main {
+        padding: 1.5rem;
+    }
+
     main#home {
         align-items: center;
         text-align: center;
@@ -21,7 +44,6 @@
         .lg-heading {
             line-height: 1;
             margin: 1vh;
-
         }
     }
 
@@ -41,7 +63,6 @@
         .lg-heading,
         .sm-heading {
             padding-left: 40px;
-
         }
 
         .tech span {
@@ -53,23 +74,23 @@
 
         .about-info {
             grid-template-areas:
-                'bioimage'
-                'social'
-                'bio'
-                'job1'
-                'job2';
+                "bioimage"
+                "social"
+                "bio"
+                "job1"
+                "job2";
             grid-template-columns: 1fr;
 
             .tech {
                 grid-template-areas:
-                    'skill1'
-                    'skill2'
-                    'skill3'
-                    'skill4'
-                    'skill5'
-                    'skill6'
-                    'skill7'
-                    'skill8';
+                    "skill1"
+                    "skill2"
+                    "skill3"
+                    "skill4"
+                    "skill5"
+                    "skill6"
+                    "skill7"
+                    "skill8";
                 grid-template-columns: 1fr;
             }
 
@@ -80,8 +101,28 @@
         }
     }
 
-    .projects {
-        grid-template-columns: repeat(2, 1fr);
+    main#work {
+        .projects {
+            grid-gap: 1rem;
+            grid-template-columns: 1fr;
+
+            .descriptions {
+                //height: 100%;
+                max-height: 250px;
+                overflow: scroll;
+                padding-bottom: 20px;
+            }
+
+            p {
+                margin-top: 4px;
+                margin-bottom: 4px;
+                padding: 0;
+            }
+        }
+
+        .btn-light {
+            margin-top: 18px;
+        }
     }
 }
 
@@ -95,7 +136,6 @@
     }
 
     main#home h2 {
-
         font-weight: 10px;
         text-align: left;
         padding-left: 0;
@@ -113,16 +153,15 @@
         }
 
         .tech {
-
             grid-template-areas:
-                'skill1'
-                'skill2'
-                'skill3'
-                'skill4'
-                'skill5'
-                'skill6'
-                'skill7'
-                'skill8';
+                "skill1"
+                "skill2"
+                "skill3"
+                "skill4"
+                "skill5"
+                "skill6"
+                "skill7"
+                "skill8";
             grid-template-columns: 1fr;
 
             span {
@@ -139,26 +178,34 @@
     main#work {
         .projects {
             grid-template-columns: 1fr;
+
+            .item {
+                .descriptions {
+                    font-size: 12px;
+                    height: 100%;
+                    max-height: 250px;
+                    overflow: scroll;
+                }
+            }
         }
     }
-
 }
 
 //Smartphone Extra Small
-@include mediaXsm {
+@include mediaXs {
     main#about {
         padding-left: 50px;
 
         .tech {
             grid-template-areas:
-                'skill1'
-                'skill2'
-                'skill3'
-                'skill4'
-                'skill5'
-                'skill6'
-                'skill7'
-                'skill8';
+                "skill1"
+                "skill2"
+                "skill3"
+                "skill4"
+                "skill5"
+                "skill6"
+                "skill7"
+                "skill8";
             grid-template-columns: 1fr;
         }
 
@@ -169,4 +216,28 @@
         }
     }
 
+    main#work {
+        .projects {
+            grid-template-columns: 1fr;
+
+            .descriptions {
+                max-height: 256px;
+                width: 100%;
+                overflow: scroll;
+            }
+        }
+    }
+}
+
+@include mediaX {
+    main#work {
+        .projects {
+            grid-template-columns: 1fr;
+
+            .descriptions {
+                max-height: 220px;
+                width: 100%;
+            }
+        }
+    }
 }

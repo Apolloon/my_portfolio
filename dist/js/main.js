@@ -30,8 +30,8 @@ $(document).ready(function () {
     //const items = document.querySelectorAll('.item');
     $('div.descriptions').hide();
 
-    $('.item').hover(function () {
-        $(this).children('div.descriptions').slideToggle(500);
+    $('.show-text').click(function () {
+        $(this).children('.descriptions').slideToggle(500);
     });
 
 });
