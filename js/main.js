@@ -1,5 +1,4 @@
 $(document).ready(function () {
-    //alert("Loaded!");
     const menuBtn = document.querySelector('.menu-btn');
     const menu = document.querySelector('.menu');
     const menuNav = document.querySelector('.menu-nav');
@@ -27,12 +26,7 @@ $(document).ready(function () {
             showMenu = false;
         }
     }
-    // Work
-    //const items = document.querySelectorAll('.item');
-    $('div.descriptions').hide();
 
-    $('.show-text').click(function () {
-        $(this).children('.descriptions').slideToggle(500);
-    });
+
 
 });
