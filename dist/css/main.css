@@ -127,88 +127,20 @@ main {
   min-height: calc(100vh - 60px); }
   main#home {
     overflow: hidden; }
-    main#home h1 {
+    main#home .main-info h1 {
       margin-top: 20vh; }
-
-#about {
-  overflow: hidden; }
-  #about .lg-heading,
-  #about .sm-heading {
-    padding-left: 60px; }
-
-.about-info {
-  display: grid;
-  grid-gap: 30px;
-  grid-template-areas: "bioimage bio bio" "social job1 job2";
-  grid-template-columns: repeat(3, 1fr); }
-  .about-info .bio-image {
-    grid-area: bioimage;
-    margin: auto; }
-    .about-info .bio-image .profile-image {
-      border-radius: 50%;
-      border: #ec3427 2px solid;
-      width: 236px;
-      height: auto; }
-    .about-info .bio-image .icons {
-      margin-top: 1rem;
-      padding-left: 2rem; }
-      .about-info .bio-image .icons a {
-        padding: 0.4rem; }
-        .about-info .bio-image .icons a:hover {
-          color: #ec3427;
-          transition: all 0.8s ease-out; }
-  .about-info .bio {
-    grid-area: bio;
-    padding: 0.5rem; }
-    .about-info .bio h4 {
-      margin-bottom: 0; }
-    .about-info .bio p {
-      margin-top: 0; }
-    .about-info .bio .tech {
-      position: relative;
-      display: grid;
-      grid-gap: 5px;
-      grid-template-areas: "skill1 skill2 skill3" "skill4 skill5 skill6" "skill7 skill8 space";
-      grid-template-columns: repeat(3, 1fr); }
-      .about-info .bio .tech span {
-        background-color: #1c4245;
-        border-radius: 8px;
-        text-align: center; }
-      .about-info .bio .tech .note {
-        margin: 0; }
-    .about-info .bio .skill-1 {
-      grid-area: skill1; }
-    .about-info .bio .skill-2 {
-      grid-area: skill2; }
-    .about-info .bio .skill-3 {
-      grid-area: skill3; }
-    .about-info .bio .skill-4 {
-      grid-area: skill4; }
-    .about-info .bio .skill-5 {
-      grid-area: skill5; }
-    .about-info .bio .skill-6 {
-      grid-area: skill6; }
-    .about-info .bio .skill-7 {
-      grid-area: skill7; }
-    .about-info .bio .skill-8 {
-      grid-area: skill8; }
-  .about-info .icons {
-    grid-area: social; }
-  .about-info .job-1 {
-    grid-area: job1; }
-  .about-info .job-2 {
-    grid-area: job2; }
-  .about-info .job {
-    background: #265a5f;
-    padding: 0.5rem;
-    border-bottom: #ec3427 5px solid; }
-    .about-info .job h3,
-    .about-info .job h4 {
-      margin: 0 auto; }
-    .about-info .job h5 {
-      margin-bottom: 0; }
-    .about-info .job p {
-      margin-top: 2px; }
+    main#home .main-info .sm-heading {
+      margin-bottom: 12px; }
+    main#home .main-info .icons {
+      padding-left: 80px; }
+    main#home .btn-icons:hover {
+      color: #ec3427; }
+    main#home .btn-home {
+      width: 180px;
+      margin-top: 12px;
+      margin-left: 80px; }
+      main#home .btn-home span {
+        margin-left: 2px; }
 
 #work {
   /*End of Heading
@@ -222,64 +154,73 @@ main {
   #work .sm-heading {
     margin-bottom: 1.5rem; }
   #work .projects {
-    display: grid;
-    grid-gap: 2rem;
-    grid-template-columns: repeat(3, 1fr); }
+    display: inline-block; }
     #work .projects .item {
-      position: relative;
-      margin: 0;
-      padding: 0; }
+      width: 100%;
+      display: inline-flex;
+      grid-gap: 0.5rem;
+      margin: 12px;
+      background-color: #265a5f; }
       #work .projects .item img {
-        width: 100%;
-        height: 100%;
-        max-height: 250px;
-        border: 3px #fff solid; }
-        #work .projects .item img:hover {
-          border-color: #ec3427;
-          transition: all 0.8s ease-out; }
+        width: 321px;
+        height: 330px;
+        border: 1px #fff solid;
+        /*&:hover {
+          //opacity: 0.85;
+          border-color: $secondary-color;
+          @include easeOut;
+        }*/ }
       #work .projects .item .descriptions {
-        height: 73%;
-        width: 100%;
-        background-color: #265a5f;
-        position: absolute;
-        text-align: left;
-        padding: 10px;
-        border-bottom: 3px #ec3427 solid;
-        overflow: hidden; }
-        #work .projects .item .descriptions h4,
-        #work .projects .item .descriptions h5 {
-          color: #e52214;
+        overflow: hidden;
+        padding: 0 20px 0 20px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        line-height: 1.3rem;
+        text-align: justify;
+        font-size: 14px; }
+        #work .projects .item .descriptions .link-provider {
+          color: #ed3d30;
+          text-decoration-line: underline; }
+        #work .projects .item .descriptions span {
+          color: #ec3427; }
+        #work .projects .item .descriptions .text-btn {
+          margin-left: 2px;
+          color: #fff; }
+        #work .projects .item .descriptions .p-name,
+        #work .projects .item .descriptions .subtitles,
+        #work .projects .item .descriptions span {
+          font-weight: bold;
           margin: 0; }
-        #work .projects .item .descriptions h5 {
-          color: white; }
-        #work .projects .item .descriptions span,
-        #work .projects .item .descriptions h4 {
-          font-weight: bold; }
-        #work .projects .item .descriptions p {
-          font-size: 11px;
-          line-height: 1em;
-          display: block;
-          font-family: Verdana, Geneva, Tahoma, sans-serif;
-          color: white;
-          list-style: none; }
+        #work .projects .item .descriptions .p-name {
+          font-style: italic;
+          margin-top: 20px; }
+        #work .projects .item .descriptions .btn-group {
+          align-self: flex-end;
+          font-size: 10px; }
+
+.btn-group {
+  position: relative;
+  margin: 12px 0 12px 0;
+  width: 100%; }
 
 .btn, .btn-dark, .btn-light {
-  display: block;
+  display: inline-flex;
+  align-content: center;
+  align-items: center;
+  text-align-last: justify;
   padding: 0.5rem 1rem;
   border: 0;
   border-radius: 8px;
-  margin-bottom: 0.3rem; }
+  width: 100px; }
   .btn:hover, .btn-dark:hover, .btn-light:hover {
-    background: #ec3427;
-    color: set-text-color(#ec3427); }
+    background: #ec3427; }
 
 .btn-dark {
-  background: black;
+  background: #102628;
   color: #fff; }
 
 .btn-light {
-  background: #c4c4c4;
-  color: #333; }
+  background: #17373a;
+  color: #fff; }
 
 #main-footer {
   text-align: center;
@@ -287,24 +228,6 @@ main {
   background: #102628;
   color: set-text-color(#1f494d);
   height: 60px; }
-
-@media screen and (max-width: 1171px) {
-  .projects {
-    grid-template-columns: repeat(4, 1fr); }
-    .projects .descriptions {
-      overflow: scroll; } }
-
-@media screen and (min-width: 770px) and (max-width: 1000px) {
-  .projects {
-    grid-template-columns: repeat(2, 1fr); }
-    .projects p {
-      font-size: 4px; }
-    .projects .descriptions {
-      max-height: 160px;
-      overflow: hidden;
-      padding: 4px; }
-      .projects .descriptions p {
-        font-size: 4px; } }
 
 @media screen and (max-width: 769px) {
   main {
@@ -315,46 +238,18 @@ main {
     main#home .lg-heading {
       line-height: 1;
       margin: 1vh; }
+    main#home .main-info .icons {
+      padding: 0; }
+    main#home .main-info .btn-home {
+      margin-left: 0; }
   ul.menu-nav {
     float: none;
     width: 100%;
     min-height: 0; }
     ul.menu-nav.show {
-      transform: translate3d(0, 0, 0); }
-  main#about {
-    text-align: center; }
-    main#about .lg-heading,
-    main#about .sm-heading {
-      padding-left: 40px; }
-    main#about .tech span {
-      margin-left: 25%;
-      width: 50%;
-      vertical-align: middle;
-      font-size: 12px; }
-    main#about .about-info {
-      grid-template-areas: "bioimage" "social" "bio" "job1" "job2";
-      grid-template-columns: 1fr; }
-      main#about .about-info .tech {
-        grid-template-areas: "skill1" "skill2" "skill3" "skill4" "skill5" "skill6" "skill7" "skill8";
-        grid-template-columns: 1fr; }
-      main#about .about-info .icons {
-        padding-left: 0;
-        margin-left: 0; }
-  main#work .projects {
-    grid-gap: 1rem;
-    grid-template-columns: 1fr; }
-    main#work .projects .descriptions {
-      max-height: 250px;
-      overflow: scroll;
-      padding-bottom: 20px; }
-    main#work .projects p {
-      margin-top: 4px;
-      margin-bottom: 4px;
-      padding: 0; }
-  main#work .btn-light {
-    margin-top: 18px; } }
+      transform: translate3d(0, 0, 0); } }
 
-@media screen and (min-width: 400px) and (max-width: 500px) {
+@media screen and (max-width: 600px) {
   main#home h1 {
     margin-top: 2vh;
     font-size: 2.5rem;
@@ -366,45 +261,20 @@ main {
     padding-left: 0; }
     main#home h2 span {
       display: inline-block; }
-  main#about .lg-heading,
-  main#about .sm-heading {
-    padding-left: 0; }
-  main#about .tech {
-    grid-template-areas: "skill1" "skill2" "skill3" "skill4" "skill5" "skill6" "skill7" "skill8";
-    grid-template-columns: 1fr; }
-    main#about .tech span {
-      font-size: 14px; }
-  main#about .icons {
-    padding-left: 0;
-    margin-left: 0; }
-  main#work .projects {
-    grid-template-columns: 1fr; }
-    main#work .projects .item .descriptions {
-      font-size: 12px;
-      height: 100%;
-      max-height: 250px;
-      overflow: scroll; } }
-
-@media screen and (max-width: 399px) {
-  main#about {
-    padding-left: 50px; }
-    main#about .tech {
-      grid-template-areas: "skill1" "skill2" "skill3" "skill4" "skill5" "skill6" "skill7" "skill8";
-      grid-template-columns: 1fr; }
-    main#about .tech span {
-      margin-left: 20%;
-      vertical-align: middle;
-      font-size: 14px; }
-  main#work .projects {
-    grid-template-columns: 1fr; }
-    main#work .projects .descriptions {
-      max-height: 256px;
+    main#home h2 .icons {
+      padding: 0;
+      margin: 0px; }
+    main#home h2 .btn-home {
+      width: 180px;
+      margin-top: 12px;
+      margin-left: 0; }
+      main#home h2 .btn-home span {
+        margin-left: 2px; }
+  main#work .projects .item {
+    display: block;
+    align-content: center;
+    margin: 0 0 16px 0;
+    font-size: 10px; }
+    main#work .projects .item img {
       width: 100%;
-      overflow: scroll; } }
-
-@media screen and (max-width: 320px) {
-  main#work .projects {
-    grid-template-columns: 1fr; }
-    main#work .projects .descriptions {
-      max-height: 220px;
-      width: 100%; } }
+      height: 220px; } }

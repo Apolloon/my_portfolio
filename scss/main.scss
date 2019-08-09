@@ -16,6 +16,7 @@ body {
 }
 
 //Headings
+
 h1,
 h2,
 h3 {
@@ -60,155 +61,43 @@ main {
   &#home {
     overflow: hidden;
 
-    h1 {
-      margin-top: 20vh;
-    }
-  }
-}
+    .main-info {
+      h1 {
+        margin-top: 20vh;
+      }
 
-//About
-#about {
-  overflow: hidden;
+      .sm-heading {
+        margin-bottom: 12px;
+      }
 
-  .lg-heading,
-  .sm-heading {
-    padding-left: 60px;
-  }
-}
-
-.about-info {
-  display: grid;
-  grid-gap: 30px;
-  grid-template-areas:
-    "bioimage bio bio"
-    "social job1 job2";
-  grid-template-columns: repeat(3, 1fr);
-
-  .bio-image {
-    grid-area: bioimage;
-    margin: auto;
-
-    .profile-image {
-      border-radius: 50%;
-      border: $secondary-color 2px solid;
-      width: 236px;
-      height: auto;
-    }
-
-    .icons {
-      margin-top: 1rem;
-      padding-left: 2rem;
-
-      a {
-        padding: 0.4rem;
-
-        &:hover {
-          color: $secondary-color;
-          @include easeOut();
-        }
+      .icons {
+        padding-left: 80px
       }
     }
-  }
 
-  .bio {
-    grid-area: bio;
-    //background: lighten($bg-color, 5);
-    padding: 0.5rem;
-
-    h4 {
-      margin-bottom: 0;
+    .btn-icons:hover {
+      color: $secondary-color;
     }
 
-    p {
-      margin-top: 0;
-    }
-
-    .tech {
-      position: relative;
-      //Skills
-      display: grid;
-      grid-gap: 5px;
-      grid-template-areas:
-        "skill1 skill2 skill3"
-        "skill4 skill5 skill6"
-        "skill7 skill8 space";
-      grid-template-columns: repeat(3, 1fr);
+    .btn-home {
+      width: 180px;
+      margin-top: 12px;
+      margin-left: 80px;
 
       span {
-        background-color: darken($bg-color, 2);
-        border-radius: 8px;
-        text-align: center;
+        margin-left: 2px;
       }
 
-      .note {
-        margin: 0;
-      }
+
+
     }
 
-    .skill-1 {
-      grid-area: skill1;
-    }
 
-    .skill-2 {
-      grid-area: skill2;
-    }
-
-    .skill-3 {
-      grid-area: skill3;
-    }
-
-    .skill-4 {
-      grid-area: skill4;
-    }
-
-    .skill-5 {
-      grid-area: skill5;
-    }
-
-    .skill-6 {
-      grid-area: skill6;
-    }
-
-    .skill-7 {
-      grid-area: skill7;
-    }
-
-    .skill-8 {
-      grid-area: skill8;
-    }
-  }
-
-  .icons {
-    grid-area: social;
-  }
-
-  .job-1 {
-    grid-area: job1;
-  }
-
-  .job-2 {
-    grid-area: job2;
-  }
-
-  .job {
-    background: lighten($bg-color, 5);
-    padding: 0.5rem;
-    border-bottom: $secondary-color 5px solid;
-
-    h3,
-    h4 {
-      margin: 0 auto;
-    }
-
-    h5 {
-      margin-bottom: 0;
-    }
-
-    p {
-      margin-top: 2px;
-    }
   }
 }
+
+
+
 
 //Projects
 #work {
@@ -228,106 +117,113 @@ main {
     Start of Projects
   */
   .projects {
-    display: grid;
-    grid-gap: 2rem;
-    grid-template-columns: repeat(3, 1fr);
-
-
-
-
+    display: inline-block;
 
     .item {
-      position: relative;
-      margin: 0;
-      padding: 0;
+      width: 100%;
+      display: inline-flex;
+      //grid-template-areas: "imagepro desc";
+      //grid-template-columns: repeat(2, 1fr);
+      grid-gap: 0.5rem;
+      margin: 12px;
+      background-color: lighten($bg-color, 5);
 
       img {
-        width: 100%;
-        height: 100%;
-        max-height: 250px;
-        border: 3px #fff solid;
+        width: 321px;
+        height: 330px;
+        border: 1px #fff solid;
+        //grid-area: imagepro;
 
-        &:hover {
+        /*&:hover {
           //opacity: 0.85;
           border-color: $secondary-color;
           @include easeOut;
-        }
+        }*/
       }
 
       .descriptions {
-        height: 73%;
-        width: 100%;
-        background-color: lighten($bg-color, 5);
-        position: absolute;
-        //opacity: 0.8;
-        text-align: left;
-        padding: 10px;
-        border-bottom: 3px $secondary-color solid;
         overflow: hidden;
+        padding: 0 20px 0 20px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        line-height: 1.3rem;
+        text-align: justify;
+        font-size: 14px;
 
-        h4,
-        h5 {
-          color: darken($secondary-color, 5);
+        .link-provider {
+          color: lighten($secondary-color, 2);
+          text-decoration-line: underline;
+        }
+
+        span {
+          color: $secondary-color;
+        }
+
+        .text-btn {
+          margin-left: 2px;
+          color: #fff;
+        }
+
+        .p-name,
+        .subtitles,
+        span {
+          font-weight: bold;
           margin: 0;
         }
 
-        h5 {
-          color: white;
+        .p-name {
+          font-style: italic;
+          margin-top: 20px;
         }
 
-        span,
-        h4 {
-          font-weight: bold;
+        .btn-group {
+          align-self: flex-end;
+          font-size: 10px;
         }
-
-        p {
-          font-size: 11px;
-          line-height: 1em;
-          display: block;
-          font-family: Verdana, Geneva, Tahoma, sans-serif;
-          color: white;
-          //opacity: 1;
-          list-style: none;
-          //flex-wrap: wrap;
-
-        }
-
       }
-
-
     }
-
   }
 }
 
 //Button Styles
+.btn-group {
+
+  position: relative;
+  margin: 12px 0 12px 0;
+  width: 100%;
+
+}
 
 .btn {
-  display: block;
+  display: inline-flex;
+  align-content: center;
+  align-items: center;
+  text-align-last: justify;
   padding: 0.5rem 1rem;
   border: 0;
   border-radius: 8px;
-  margin-bottom: 0.3rem;
+  width: 100px;
 
   &:hover {
     background: $secondary-color;
-    color: set-text-color($secondary-color);
+
   }
 }
 
+
+
 .btn-dark {
-  //width: 49%;
   @extend .btn;
-  background: darken($primary-color, 50);
+  background: darken($bg-color, 10);
   color: #fff;
 }
 
 .btn-light {
-  //width: 49%;
+
   @extend .btn;
-  background: lighten($primary-color, 50);
-  color: #333;
+  background: darken($bg-color, 5);
+  color: #fff;
 }
+
 
 #main-footer {
   text-align: center;
